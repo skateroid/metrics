@@ -54,4 +54,5 @@
  - Поля name, value, requestTimestamp являются обязательными
  - После этого можно выполнить GET request для получения метрик, как из REST API выше
  
- В дальнейшем добавлю Swagger.
+ Добавлен Swagger, для того чтобы посмотреть все REST API нужно после запуска приложения зайти на http://localhost:8080/swagger-ui.html#
+ Перейти в Metric Resource и раскрыв какой-нибудь endpoint, нажав на try it out, отправить в приложение запрос.
