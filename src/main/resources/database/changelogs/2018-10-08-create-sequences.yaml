@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2018-10-05-00003-01
+      author: e.khokhlin
+      comment: create sequences for all tables
+      changes:
+        - createSequence:
+            sequenceName: cpu_id_seq
+            incrementBy: 50
+        - createSequence:
+            sequenceName: memory_id_seq
+            incrementBy: 50
+        - createSequence:
+            sequenceName: hdd_id_seq
+            incrementBy: 50
+        - createSequence:
+            sequenceName: ssd_id_seq
+            incrementBy: 50
+        - createSequence:
+            sequenceName: task_count_id_seq
+            incrementBy: 50

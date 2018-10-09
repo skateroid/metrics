@@ -1,0 +1,205 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2018-10-05-00002-01
+      author: e.khokhlin
+      comment: create CPU table
+      changes:
+        - createTable:
+            tableName: cpu
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    - primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(64)
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: value
+                  type: decimal
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: status
+                  type: varchar(20)
+              - column:
+                  name: params
+                  type: varchar(1024)
+              - column:
+                  name: timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+              - column:
+                  name: request_timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: operation_timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+
+  - changeSet:
+      id: 2018-10-05-00002-02
+      author: e.khokhlin
+      comment: create Memory table
+      changes:
+        - createTable:
+            tableName: memory
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    - primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(64)
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: value
+                  type: decimal
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: status
+                  type: varchar(20)
+              - column:
+                  name: params
+                  type: varchar(1024)
+              - column:
+                  name: timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+              - column:
+                  name: request_timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: operation_timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+
+  - changeSet:
+      id: 2018-10-05-00002-03
+      author: e.khokhlin
+      comment: create HDD table
+      changes:
+        - createTable:
+            tableName: hdd
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    - primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(64)
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: value
+                  type: decimal
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: status
+                  type: varchar(20)
+              - column:
+                  name: params
+                  type: varchar(1024)
+              - column:
+                  name: timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+              - column:
+                  name: request_timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: operation_timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+
+  - changeSet:
+      id: 2018-10-05-00002-04
+      author: e.khokhlin
+      comment: create SSD table
+      changes:
+        - createTable:
+            tableName: ssd
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    - primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(64)
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: value
+                  type: decimal
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: status
+                  type: varchar(20)
+              - column:
+                  name: params
+                  type: varchar(1024)
+              - column:
+                  name: timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+              - column:
+                  name: request_timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: operation_timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+
+  - changeSet:
+      id: 2018-10-05-00002-05
+      author: e.khokhlin
+      comment: create TaskCount table
+      changes:
+        - createTable:
+            tableName: task_count
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    - primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(64)
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: value
+                  type: decimal
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: status
+                  type: varchar(20)
+              - column:
+                  name: params
+                  type: varchar(1024)
+              - column:
+                  name: timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+              - column:
+                  name: request_timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE
+                  constraints:
+                    - nullable: false
+              - column:
+                  name: operation_timestamp
+                  type: TIMESTAMP(6) WITH TIME ZONE

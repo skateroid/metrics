@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
       file: database/changelogs/2018-10-05-init-schema.yaml
+  - include:
+      file: database/changelogs/2018-10-08-create-sequences.yaml
