@@ -10,6 +10,7 @@
  - Собрать проект, используя Maven, c помощью команды "install"
  - Запустить в IDE MetricsApplication
  - Используя REST API, указанный выше, выполнить POST request, например, с примером ниже:
+ 
  {
 "metrics": [
  { 
@@ -48,6 +49,7 @@
    }
   ]
 }
+
  - Поля name, value, requestTimestamp являются обязательными
  - После этого можно выполнить GET request для получения метрик, как из REST API выше
  
