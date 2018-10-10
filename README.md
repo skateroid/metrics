@@ -8,6 +8,7 @@
 
 Для тестирования функционала необходимо:
  - Создать локальную PostgreSQL базу "metrics" с username: postgres, password: postgres
+ - Перед сборкой проекта подключить в IDE плагин "lombok"
  - Собрать проект, используя Maven, c помощью команды "install"
  - Запустить в IDE MetricsApplication
  - Используя REST API, указанный выше, выполнить POST request, например, с примером ниже:
