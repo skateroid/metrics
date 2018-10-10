@@ -50,7 +50,7 @@ public class MetricService {
         this.taskCountMapper = taskCountMapper;
     }
 
-    public void createMetric(MetricCreateRequest metricCreateRequest) {
+    public List<BaseMetric> createMetric(MetricCreateRequest metricCreateRequest) {
         List<BaseMetricCreateRequest> cpuBaseMetricCreateRequests = metricCreateRequest.getMetrics().stream()
                 .filter(it -> it.getName().equals("cpu"))
                 .collect(Collectors.toList());
@@ -118,11 +118,30 @@ public class MetricService {
             }
         });
 
-        cpuRepository.saveAll(cpuEntities);
-        memoryRepository.saveAll(memoryEntities);
-        hddRepository.saveAll(hddEntities);
-        ssdRepository.saveAll(ssdEntities);
-        taskCountRepository.saveAll(taskCountEntities);
+        List<Long> cpuIds = cpuRepository.saveAll(cpuEntities).stream()
+                .map(CpuEntity::getId)
+                .collect(Collectors.toList());
+        List<Long> memoryIds = memoryRepository.saveAll(memoryEntities).stream()
+                .map(MemoryEntity::getId)
+                .collect(Collectors.toList());
+        List<Long> hddIds = hddRepository.saveAll(hddEntities).stream()
+                .map(HddEntity::getId)
+                .collect(Collectors.toList());
+        List<Long> ssdIds = ssdRepository.saveAll(ssdEntities).stream()
+                .map(SsdEntity::getId)
+                .collect(Collectors.toList());
+        List<Long> taskCountIds = taskCountRepository.saveAll(taskCountEntities).stream()
+                .map(TaskCountEntity::getId)
+                .collect(Collectors.toList());
+
+        List<BaseMetric> createdMetrics = new ArrayList<>();
+        createdMetrics.addAll(cpuMapper.mapEntitiesToModels(cpuRepository.findAllById(cpuIds)));
+        createdMetrics.addAll(memoryMapper.mapEntitiesToModels(memoryRepository.findAllById(memoryIds)));
+        createdMetrics.addAll(hddMapper.mapEntitiesToModels(hddRepository.findAllById(hddIds)));
+        createdMetrics.addAll(ssdMapper.mapEntitiesToModels(ssdRepository.findAllById(ssdIds)));
+        createdMetrics.addAll(taskCountMapper.mapEntitiesToModels(taskCountRepository.findAllById(taskCountIds)));
+
+        return createdMetrics;
     }
 
     public List<BaseMetric> getMetric(String metricName, Integer count) {

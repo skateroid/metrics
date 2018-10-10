@@ -29,7 +29,7 @@ public class MetricResource {
     }
 
     @PostMapping("post")
-    public void createMetric(@Valid @RequestBody MetricCreateRequest metricCreateRequest) {
-        metricService.createMetric(metricCreateRequest);
+    public List<BaseMetric> createMetric(@Valid @RequestBody MetricCreateRequest metricCreateRequest) {
+        return metricService.createMetric(metricCreateRequest);
     }
 }
